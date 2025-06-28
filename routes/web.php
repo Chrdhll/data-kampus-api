@@ -16,3 +16,12 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api/kampus'], function () use ($router) {
+    $router->get('/', 'KampusController@index');         // Get all
+    $router->get('{id}', 'KampusController@show');       // Get by ID
+    $router->post('/', 'KampusController@store');        // Create
+    $router->put('{id}', 'KampusController@update');     // Update
+    $router->delete('{id}', 'KampusController@destroy'); // Delete
+});
+

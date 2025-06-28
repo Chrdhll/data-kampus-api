@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('campus', function (Blueprint $table) {
             $table->id();
+            $table->string('namaKampus');
+            $table->text('alamat');
+            $table->string('noTelp');
+            $table->enum('kategori',['swasta','negeri']);
+            $table->double('lat');
+            $table->double('lng');
+            $table->string('jurusan');
             $table->timestamps();
         });
     }
